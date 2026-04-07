@@ -1,10 +1,11 @@
 
-import java.util.Scanner;
+import java.util.*;
 
 public class Ordenamiento {
     public static void main(String[] args) {
         
-    Scanner sc = new Scanner(System.in);   
+    Scanner sc = new Scanner(System.in);  
+     Random rand = new Random();
     
         System.out.println("ingrese el tamaño del arreglo");
         int n;
@@ -12,9 +13,10 @@ public class Ordenamiento {
         
         int v[] = new int[n];       
         
-        for (int i = 0; i < n; i++) {
-            System.out.print("Ingrese el dato en la posicion " + i + ": ");
-            v[i] = sc.nextInt();
+        
+   
+         for (int i = 0; i < n; i++) {
+            v[i] = rand.nextInt(501) - 200; //dependera del rango que tu eligas
         }
 
         ordenar(v);
