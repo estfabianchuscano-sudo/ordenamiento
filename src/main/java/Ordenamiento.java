@@ -12,13 +12,16 @@ public class Ordenamiento {
         
         int v[] = new int[n];       
         
+        for (int i = 0; i < n; i++) {
+            System.out.print("Ingrese el dato en la posicion " + i + ": ");
+            v[i] = sc.nextInt();
+        }
+
+        ordenar(v);
+       
+        System.out.println(java.util.Arrays.toString(v));
+    
         
-        
-        
-        
-        int arr[] = {5, 2, 11, -8, 115, 56, -3};
-        ordenar(arr);
-        System.out.println(java.util.Arrays.toString(arr));
     }
     
     
