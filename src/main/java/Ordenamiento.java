@@ -21,7 +21,7 @@ public class Ordenamiento {
          
     System.out.println("seleccione el metodo de ordenamiento:");
     System.out.println("1. burbuja");
-    System.out.println("2. insercion");
+    System.out.println("2. QuickSort");
 
     int opcion = sc.nextInt();
     
@@ -30,7 +30,7 @@ public class Ordenamiento {
         burbuja(v);
         break;
     case 2:
-        insercion(v);
+        quickSort(v, 0, v.length - 1);
         break;
     default:
         System.out.println("Opcion invalida");
@@ -49,12 +49,36 @@ public class Ordenamiento {
                     int w = v[j];
                     v[j] = v[i];
                     v[i] = w;
-                }
-                
-  
-                
+                }   
             }
         }
     }
+    
+    private static void quickSort(int v[], int inicio, int fin) {
+    if (inicio < fin) {
+
+        int pivote = v[fin];
+        int i = inicio - 1;
+
+        for (int j = inicio; j < fin; j++) {
+            if (v[j] < pivote) {
+                i++;
+
+                int temp = v[i];
+                v[i] = v[j];
+                v[j] = temp;
+            }
+        }
+
+        int temp = v[i + 1];
+        v[i + 1] = v[fin];
+        v[fin] = temp;
+
+        int pi = i + 1;
+
+        quickSort(v, inicio, pi - 1);
+        quickSort(v, pi + 1, fin);
+    }
+}
 }
 
