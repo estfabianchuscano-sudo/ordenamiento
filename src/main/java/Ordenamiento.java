@@ -19,14 +19,22 @@ public class Ordenamiento {
         }
 
          
-    System.out.println("Seleccione el metodo de ordenamiento:");
-    System.out.println("1. Burbuja");
-    System.out.println("2. Seleccion");
+    System.out.println("seleccione el metodo de ordenamiento:");
+    System.out.println("1. burbuja");
+    System.out.println("2. insercion");
 
     int opcion = sc.nextInt();
     
-    
-        ordenar(v);
+    switch(opcion){
+    case 1:
+        burbuja(v);
+        break;
+    case 2:
+        insercion(v);
+        break;
+    default:
+        System.out.println("Opcion invalida");
+}
        
         System.out.println(java.util.Arrays.toString(v));
     
@@ -34,7 +42,7 @@ public class Ordenamiento {
     }
     
     
-    private static void ordenar(int v[]) {
+    private static void burbuja(int v[]) {
         for (int i = 0; i < v.length -1; i++) {
             for (int j = i+1; j < v.length ; j++) {
                 if (v[i] > v[j]) {
@@ -42,7 +50,11 @@ public class Ordenamiento {
                     v[j] = v[i];
                     v[i] = w;
                 }
+                
+  
+                
             }
         }
     }
 }
+
