@@ -5,20 +5,27 @@ public class Ordenamiento {
     public static void main(String[] args) {
         
     Scanner sc = new Scanner(System.in);  
-     Random rand = new Random();
-    
+    Random rand = new Random();
+     
         System.out.println("ingrese el tamaño del arreglo");
         int n;
         n = sc.nextInt();
         
         int v[] = new int[n];       
         
-        
    
          for (int i = 0; i < n; i++) {
             v[i] = rand.nextInt(501) - 200; //dependera del rango que tu eligas
         }
 
+         
+    System.out.println("Seleccione el metodo de ordenamiento:");
+    System.out.println("1. Burbuja");
+    System.out.println("2. Seleccion");
+
+    int opcion = sc.nextInt();
+    
+    
         ordenar(v);
        
         System.out.println(java.util.Arrays.toString(v));
